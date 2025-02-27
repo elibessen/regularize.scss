@@ -42,7 +42,3 @@ Licensed under the MIT License – use it, tweak it, share it! 💖
 ___
 
 Go forth and build beautifully consistent websites! 🎨✨
-=======
-# regularize.scss
-
-A modern SCSS reset stylesheet
