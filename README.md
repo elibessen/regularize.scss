@@ -1,6 +1,6 @@
 # 🚀 Regularize.scss   
 
-Regularize.scss is a SCSS reset stylesheet that eliminates inconsistent browser defaults while preserving essential usability and accessibility features. By seamlessly integrating Normalize.css and The New CSS Reset, it ensures a predictable, standardized styling baseline across all modern browsers. Say goodbye to unpredictable layouts and inconsistent form behaviors—Regularize.scss provides a solid foundation for any project.
+Regularize.scss is a SCSS reset stylesheet that eliminates inconsistent browser defaults while preserving essential usability and accessibility features. It ensures a predictable, standardized styling baseline across all modern browsers. Say goodbye to unpredictable layouts and inconsistent form behaviors — Regularize.scss provides a solid foundation for any project.
 
 ## 🎯 Why Regularize.scss?
 
@@ -19,8 +19,8 @@ Regularize.scss is a SCSS reset stylesheet that eliminates inconsistent browser 
 npm install regularize.scss
 ```
 **SCSS Import**
-```js
-@import 'regularize.scss';
+```css
+@import 'regularize.scss/regularize.css';
 ```
 **Compiled CSS**
 ```html
@@ -30,10 +30,13 @@ npm install regularize.scss
 ## 🚀 How to use
 Just slap Regularize.scss at the top of your main stylesheet, and boom 💥 – your styles are now on solid ground.
 
+## ⚠️ Older Versions
+Older versions of Regularize.scss are available as branches in the repository for reference or for rolling back. However, these versions are **no longer maintained** and may not include the latest improvements, bug fixes, or best practices. Use them with caution.
+
 ## 📚 References
 Regularize.scss has been built from the ground up with the help of:
-- Normalize.css by Nicolas Gallagher
-- The New CSS Reset by Elad Shechter
+- [Normalize.css](https://github.com/necolas/normalize.css) by Nicolas Gallagher
+- [The New CSS Reset](https://github.com/elad2412/the-new-css-reset) by Elad Shechter
 
 ## 📜 License
 
