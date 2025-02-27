@@ -1,0 +1,36 @@
+{
+  "name": "regularize.scss",
+  "version": "1.0.0",
+  "description": "A modern SCSS reset that removes default browser styles while maintaining essential functionality.",
+  "main": "dist/regularize.css",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/elibessen/regularize.scss"
+  },
+  "scripts": {
+    "build": "sass src/regularize.scss dist/regularize.css",
+    "watch": "sass --watch src/regularize.scss:dist/regularize.css",
+    "dev": "npm run watch"
+  },
+  "keywords": [
+    "scss",
+    "css-reset",
+    "regularize",
+    "browser-normalization",
+    "styles"
+  ],
+  "author": "Eli Bessen",
+  "license": "MIT",
+  "homepage": "https://github.com/elibessen/regularize.scss/blob/main/README.md",
+  "bugs": {
+    "url": "https://github.com/elibessen/regularize.scss/issues"
+  },
+  "devDependencies": {
+    "sass": "^1.81.0"
+  },
+  "files": [
+    "regularize.css",
+    "LICENSE",
+    "README.md"
+  ]
+}
