@@ -2,173 +2,130 @@
 // Global CSS Reset - Regularize.scss - https://github.com/elibessen/regularize.scss
 // ==============================
 
-// Remove all default styles except display
-// - Resets all properties to their initial values
-// - Keeps `display` to prevent layout issues
-// - Excludes key elements like <html>, <iframe>, <img>, <svg>, etc.
+/* Reset default styles except display to prevent unintended inherited styles */
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
     display: revert;
 }
 
-// Apply box-sizing border-box for all elements
-// - Ensures padding and border are included in element dimensions
-// - Prevents box-sizing inconsistencies
+/* Apply box-sizing border-box to all elements to make sizing predictable */
 *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: inherit; // Ensure all elements inherit the same font
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
 }
 
-// ======================================
-// Text & Font Adjustments
-// ======================================
+/* =============================== */
+/* TYPOGRAPHY & TEXT BEHAVIOR FIX */
+/* =============================== */
 
-// Prevents mobile browsers from resizing text automatically
+/* Prevent automatic text resizing in mobile Safari */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    line-height: 1.15; // Default line-height fix
+    line-height: 1.15; /* Maintain a consistent default line height */
 }
 
-// Improve smooth scrolling behavior and font rendering
-// - Enables smooth scrolling for better UX
-// - Enhances font rendering for macOS users
+/* Improve smooth scrolling behavior and enhance font rendering */
 html, body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh; // Ensures full viewport height
-    line-height: 1.5; // Improves text readability
+    min-height: 100vh; /* Ensure full height */
 }
 
-// Prevents layout-breaking issues due to overflowing content
-* {
-    min-width: 0;
-}
+/* =========================== */
+/* INTERACTIVITY & CURSORS FIX */
+/* =========================== */
 
-// Reapply pointer cursor for interactive elements
-// - Ensures links and buttons show the correct cursor
+/* Restore pointer cursor for interactive elements */
 a, button {
     cursor: pointer;
 }
 
-// ======================================
-// List Reset
-// ======================================
+/* ============================= */
+/* LISTS & ORDERED LIST FIXES */
+/* ============================= */
 
-// Remove default list styles
-// - No bullets or numbers by default
-// - Prevents unexpected extra spacing
+/* Remove default list styles to create a clean slate */
 ul, ol, menu, summary {
     list-style: none;
-    padding-left: 0;
+    padding-left: 0; /* Ensure no indentation */
 }
 
-// Fix nested ordered list numbering issue in Firefox
+/* Fix nested ordered list numbering issue in Firefox */
 ol {
     counter-reset: revert;
 }
 
-// ======================================
-// Image & Media Adjustments
-// ======================================
+/* ============================= */
+/* MEDIA ELEMENTS & IMAGES FIX */
+/* ============================= */
 
-// Ensure images fit their container
-// - Prevents images from overflowing
-// - Removes unwanted borders
-// - Aligns images properly
-img {
-    max-inline-size: 100%;
+/* Ensure images, videos, and canvas elements fit their containers */
+img, video, canvas {
+    max-inline-size: 100%; /* Prevent overflow */
     max-block-size: 100%;
     border-style: none;
-    vertical-align: middle;
+    vertical-align: middle; /* Avoid unexpected spacing */
     display: block;
+    height: auto; /* Maintain aspect ratio */
 }
 
-// ======================================
-// Table Reset
-// ======================================
+/* ========================== */
+/* TABLE & FORM ELEMENT FIXES */
+/* ========================== */
 
-// Standardize table behavior
-// - Prevents unwanted spacing between cells
-// - Ensures tables take full width by default
+/* Remove default table spacing and ensure full width */
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
 }
 
-// ======================================
-// Form & Button Normalization
-// ======================================
-
-// Normalize input, textarea, select, and button styles
-// - Removes inconsistent default styles across browsers
-// - Ensures they inherit fonts and colors from surrounding text
-input, textarea, select, button {
-    font: inherit;
-    color: inherit;
-    background: transparent;
-    border: none;
-    outline: none;
-}
-
-// Ensure inputs and textareas remain selectable in Safari
+/* Fix Safari issue where inputs and textareas had incorrect user-select behavior */
 input, textarea {
     -webkit-user-select: auto;
+    font: inherit;
+    color: inherit;
 }
 
-// Prevents Safari from breaking text wrapping in textareas
+/* Ensure textareas retain whitespace formatting in Safari */
 textarea {
     white-space: revert;
     overflow: auto;
 }
 
-// Improve accessibility of disabled elements
-// - Adds visual feedback by reducing opacity and changing cursor
-:disabled {
-    cursor: not-allowed;
-    opacity: 0.5;
-}
+/* ================================ */
+/* BUTTONS, INTERACTIVE & FOCUS FIX */
+/* ================================ */
 
-// Remove default button appearance
-// - Prevents iOS and Safari from applying native button styles
-button, [type="button"], [type="reset"], [type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
-    background-color: transparent;
-}
-
-// Remove Firefox-specific padding inside buttons
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, 
-[type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
-}
-
-// ======================================
-// Accessibility & Focus Styles
-// ======================================
-
-// Keep focus outline for keyboard users, but remove it for mouse clicks
-// - Helps users navigate without breaking usability
+/* Improve accessibility by keeping focus outlines while making them less intrusive */
 :focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
 }
-:focus:not(:focus-visible) {
-    outline: none;
+
+/* Ensure buttons inherit font styles and remain clickable */
+button, [type="button"], [type="reset"], [type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+    background-color: transparent;
+    font: inherit;
 }
 
-// ======================================
-// Fieldset & Legend Adjustments
-// ======================================
+/* Remove inner border and padding in Firefox buttons */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
 
-// Normalize fieldset and legend styles
-// - Prevents inconsistent spacing across browsers
+/* ========================== */
+/* FORMS & FIELDSET STYLES */
+/* ========================== */
+
+/* Normalize fieldset and legend styles to maintain structure */
 fieldset {
     padding: 0.35em 0.75em 0.625em;
 }
@@ -181,23 +138,25 @@ legend {
     white-space: normal;
 }
 
-// ======================================
-// Miscellaneous Fixes
-// ======================================
+/* ============================ */
+/* PLACEHOLDER & HIDDEN FIXES */
+/* ============================ */
 
-// Reset default placeholder opacity for better contrast
+/* Reset placeholder text color */
 ::placeholder {
     color: unset;
 }
 
-// Ensure [hidden] elements are completely hidden
-// - Prevents inconsistent handling across browsers
+/* Ensure hidden elements remain hidden */
 :where([hidden]) {
-    display: none;
+    display: none !important;
 }
 
-// Ensure contenteditable elements function correctly
-// - Fixes browser inconsistencies when editing text
+/* ============================= */
+/* CONTENTEDITABLE & DRAGGABLE */
+/* ============================= */
+
+/* Enable proper contenteditable behavior */
 :where([contenteditable]:not([contenteditable="false"])) {
     -moz-user-modify: read-write;
     -webkit-user-modify: read-write;
@@ -206,33 +165,31 @@ legend {
     -webkit-user-select: auto;
 }
 
-// Reapply draggable feature in Chromium and Safari
-// - Fixes draggable elements losing functionality
+/* Restore draggable functionality in Chromium and Safari */
 :where([draggable="true"]) {
     -webkit-user-drag: element;
 }
 
-// Revert Modal native behavior
-// - Ensures the <dialog> element behaves as expected
+/* ========================== */
+/* MODALS & DETAILS ELEMENTS */
+/* ========================== */
+
+/* Reset native modal behavior */
 :where(dialog:modal) {
     all: revert;
     box-sizing: border-box;
 }
 
-// Remove default styles from <details> summary in WebKit browsers
+/* Remove default WebKit styles for summary elements */
 ::-webkit-details-marker {
     display: none;
 }
 
-// ======================================
-// Additional Element Fixes
-// ======================================
-
-// Standardize <hr> element
-// - Ensures it appears consistently across browsers
-hr {
-    border: none;
-    height: 1px;
-    background-color: currentColor;
-    opacity: 0.2;
+/* Fix Safari default rendering of details & summary elements */
+details {
+    display: block;
 }
+summary {
+    display: list-item;
+}
+
