@@ -1,113 +1,97 @@
 // ==============================
-// Global CSS Reset - Regularize.scss - https://github.com/elibessen/regularize.scss
+// Global CSS Reset - Regularize.scss
+// GitHub: https://github.com/elibessen/regularize.scss
 // ==============================
 
-/* Reset default styles except display to prevent unintended inherited styles */
+/* ============ GLOBAL RESET ============ */
+/* Remove default styles except display */
 *:where(:not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)) {
     all: unset;
     display: revert;
 }
 
-/* Apply box-sizing border-box to all elements to make sizing predictable */
+/* Apply box-sizing: border-box to all elements */
 *, *::before, *::after {
     box-sizing: border-box;
-    margin: 0; /* Remove default margin */
-    padding: 0; /* Remove default padding */
+    margin: 0;
+    padding: 0;
 }
 
-/* =============================== */
-/* TYPOGRAPHY & TEXT BEHAVIOR FIX */
-/* =============================== */
-
-/* Prevent automatic text resizing in mobile Safari */
+/* ============ TYPOGRAPHY ============ */
+/* Prevent text resizing in mobile Safari */
 html {
     -moz-text-size-adjust: none;
     -webkit-text-size-adjust: none;
     text-size-adjust: none;
-    line-height: 1.15; /* Maintain a consistent default line height */
+    line-height: 1.15;
 }
 
-/* Improve smooth scrolling behavior and enhance font rendering */
+/* Improve smooth scrolling & font rendering */
 html, body {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    min-height: 100vh; /* Ensure full height */
+    min-height: 100vh;
 }
 
-/* =========================== */
-/* INTERACTIVITY & CURSORS FIX */
-/* =========================== */
-
+/* ============ INTERACTIVITY ============ */
 /* Restore pointer cursor for interactive elements */
 a, button {
     cursor: pointer;
 }
 
-/* ============================= */
-/* LISTS & ORDERED LIST FIXES */
-/* ============================= */
-
-/* Remove default list styles to create a clean slate */
+/* ============ LIST STYLES ============ */
+/* Remove default list styles */
 ul, ol, menu, summary {
     list-style: none;
-    padding-left: 0; /* Ensure no indentation */
+    padding-left: 0;
 }
 
-/* Fix nested ordered list numbering issue in Firefox */
+/* Fix nested ordered list numbering in Firefox */
 ol {
     counter-reset: revert;
 }
 
-/* ============================= */
-/* MEDIA ELEMENTS & IMAGES FIX */
-/* ============================= */
-
-/* Ensure images, videos, and canvas elements fit their containers */
+/* ============ MEDIA ELEMENTS ============ */
+/* Ensure images, videos, and canvas elements fit containers */
 img, video, canvas {
-    max-inline-size: 100%; /* Prevent overflow */
+    max-inline-size: 100%;
     max-block-size: 100%;
     border-style: none;
-    vertical-align: middle; /* Avoid unexpected spacing */
+    vertical-align: middle;
     display: block;
-    height: auto; /* Maintain aspect ratio */
+    height: auto;
 }
 
-/* ========================== */
-/* TABLE & FORM ELEMENT FIXES */
-/* ========================== */
-
-/* Remove default table spacing and ensure full width */
+/* ============ TABLES & FORMS ============ */
+/* Remove default table spacing */
 table {
     border-collapse: collapse;
     border-spacing: 0;
     width: 100%;
 }
 
-/* Fix Safari issue where inputs and textareas had incorrect user-select behavior */
+/* Fix Safari input & textarea selection */
 input, textarea {
     -webkit-user-select: auto;
     font: inherit;
     color: inherit;
 }
 
-/* Ensure textareas retain whitespace formatting in Safari */
+/* Ensure textareas retain whitespace formatting */
 textarea {
     white-space: revert;
     overflow: auto;
 }
 
-/* ================================ */
-/* BUTTONS, INTERACTIVE & FOCUS FIX */
-/* ================================ */
-
-/* Improve accessibility by keeping focus outlines while making them less intrusive */
+/* ============ BUTTONS & FOCUS ============ */
+/* Improve focus outlines for accessibility */
 :focus-visible {
     outline: 2px solid currentColor;
     outline-offset: 2px;
 }
 
-/* Ensure buttons inherit font styles and remain clickable */
+/* Ensure buttons inherit styles */
 button, [type="button"], [type="reset"], [type="submit"] {
     -webkit-appearance: button;
     cursor: pointer;
@@ -115,17 +99,15 @@ button, [type="button"], [type="reset"], [type="submit"] {
     font: inherit;
 }
 
-/* Remove inner border and padding in Firefox buttons */
-button::-moz-focus-inner, [type="button"]::-moz-focus-inner, [type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
+/* Remove inner border in Firefox buttons */
+button::-moz-focus-inner, [type="button"]::-moz-focus-inner, 
+[type="reset"]::-moz-focus-inner, [type="submit"]::-moz-focus-inner {
     border-style: none;
     padding: 0;
 }
 
-/* ========================== */
-/* FORMS & FIELDSET STYLES */
-/* ========================== */
-
-/* Normalize fieldset and legend styles to maintain structure */
+/* ============ FIELDSETS ============ */
+/* Normalize fieldset & legend styles */
 fieldset {
     padding: 0.35em 0.75em 0.625em;
 }
@@ -138,10 +120,7 @@ legend {
     white-space: normal;
 }
 
-/* ============================ */
-/* PLACEHOLDER & HIDDEN FIXES */
-/* ============================ */
-
+/* ============ PLACEHOLDER & HIDDEN FIXES ============ */
 /* Reset placeholder text color */
 ::placeholder {
     color: unset;
@@ -152,10 +131,7 @@ legend {
     display: none !important;
 }
 
-/* ============================= */
-/* CONTENTEDITABLE & DRAGGABLE */
-/* ============================= */
-
+/* ============ CONTENTEDITABLE & DRAGGABLE ============ */
 /* Enable proper contenteditable behavior */
 :where([contenteditable]:not([contenteditable="false"])) {
     -moz-user-modify: read-write;
@@ -165,15 +141,12 @@ legend {
     -webkit-user-select: auto;
 }
 
-/* Restore draggable functionality in Chromium and Safari */
+/* Restore draggable functionality in Chrome & Safari */
 :where([draggable="true"]) {
     -webkit-user-drag: element;
 }
 
-/* ========================== */
-/* MODALS & DETAILS ELEMENTS */
-/* ========================== */
-
+/* ============ MODALS & DETAILS ============ */
 /* Reset native modal behavior */
 :where(dialog:modal) {
     all: revert;
@@ -185,7 +158,7 @@ legend {
     display: none;
 }
 
-/* Fix Safari default rendering of details & summary elements */
+/* Fix Safari rendering for details & summary */
 details {
     display: block;
 }
@@ -193,3 +166,28 @@ summary {
     display: list-item;
 }
 
+/* ============ ADDITIONAL BROWSER SUPPORT ============ */
+/* Ensure compatibility with Brave, Edge, Opera, and other Chromium-based browsers */
+@supports (-webkit-touch-callout: none) {
+    html, body {
+        -webkit-text-size-adjust: none;
+    }
+}
+
+/* Fix input styles for Brave and Edge */
+@supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    input, textarea, select, button {
+        font: inherit;
+    }
+}
+
+/* Improve compatibility for older versions of Firefox & IE */
+@supports not (display: revert) {
+    * {
+        all: initial;
+    }
+    img, video, canvas {
+        max-width: 100%;
+        height: auto;
+    }
+}

@@ -1,6 +1,6 @@
 {
   "name": "regularize.scss",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A modern SCSS reset that removes default browser styles while maintaining essential functionality.",
   "main": "dist/regularize.css",
   "repository": {
@@ -29,7 +29,7 @@
     "sass": "^1.81.0"
   },
   "files": [
-    "regularize.css",
+    "dist/regularize.css",
     "LICENSE",
     "README.md"
   ]
