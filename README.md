@@ -1,18 +1,17 @@
-# 🚀 Regularize.scss   
+# Regularize.scss   
 
 Regularize.scss is a SCSS reset stylesheet that eliminates inconsistent browser defaults while preserving essential usability and accessibility features. It ensures a predictable, standardized styling baseline across all modern browsers.
 
-## 🎯 Why Regularize.scss?
+## Why Regularize.scss?
 
-- 🔥 Kills default browser styles
-- 📦 Box-sizing: border-box
-- 🎨 Maintains accessibility
-- 🌍 Responsive images
-- 🎭 Form control sanity
-- 🛠️ Fixes browser weirdness
-- ⏩ Built with the almighty SCSS
+- Kills default browser styles
+- Box-sizing: border-box
+- Maintains accessibility
+- Responsive images
+- Form control sanity
+- Fixes browser weirdness
 
-## 📦 Installation  
+## Installation  
 
 **NPM Install**
 ```sh
@@ -27,23 +26,23 @@ npm install regularize.scss
 <link rel="stylesheet" href="path/to/regularize.css">
 ```
 
-## 🚀 How to use
-Just slap Regularize.scss at the top of your main stylesheet, and boom 💥 your styles are now on solid ground.
+## How to use
+Add Regularize.scss at the top of your main stylesheet.
 
 
-## ⚠️ Older Versions
+## Older Versions
 Older versions of Regularize.scss are available as branches in the repository for reference or for rolling back. However, these versions are **no longer maintained** and may not include the latest improvements, bug fixes, or best practices. Use them with caution.
 
-## 📚 References
+## References
 Regularize.scss has been built from the ground up with the help of:
 - [Normalize.css](https://github.com/necolas/normalize.css) by Nicolas Gallagher
 - [The New CSS Reset](https://github.com/elad2412/the-new-css-reset) by Elad Shechter
 
-## 📜 License
+## License
 
 Licensed under the MIT License
 
-## 🌎 Browser Compatibility
+## Browser Compatibility
 
 | Feature                        | Chrome | Firefox | Safari | Edge | Opera | Brave | IE 11 |
 |--------------------------------|--------|---------|--------|------|-------|-------|-------|
@@ -62,14 +61,10 @@ Licensed under the MIT License
 | Modal (dialog:modal) reset     | ✅      | ✅       | ✅      | ✅    | ✅     | ✅     | ❌       |
 
 **Legend:**  
-✅ Fully Supported | ⚠️ Partial Support (some quirks in older versions) | ❌ Not Supported
+Fully Supported | ⚠️ Partial Support (some quirks in older versions) | ❌ Not Supported
 
 **Notes:**
 - *IE 11 lacks support for `display: revert`, `:focus-visible`, `all: unset`, and some other modern CSS properties.
 - Older versions of Safari (pre-12) may have inconsistencies with `text-size-adjust`.
 - Brave, Edge, and Opera are Chromium-based, so they behave similarly to Chrome.
 
-
-___
-
-Go forth and build beautifully consistent websites! 🎨✨
